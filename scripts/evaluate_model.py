@@ -101,14 +101,9 @@ def evaluate(sample_size=100):
         if results and results['matches']:
             for match in results['matches']:
                 # Extract photo_id from filename in metadata
-                # metadata path is like 'assets/image-dataset/photo_id.jpg'
-                # filename is 'photo_id.jpg'
                 filename = match['metadata'].get('filename', '')
                 pid = os.path.splitext(filename)[0]
-                
-                # Look up description in the valid_rows (which is a list of dicts)
-                # This is a bit inefficient O(N) lookup but valid_rows contains all images we care about.
-                # Actually, we need a global lookup for ALL images in the dataset to find their description.
+            
 
                 pass 
 
