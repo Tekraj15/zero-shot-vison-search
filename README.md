@@ -75,14 +75,14 @@ The Zero-Shot Vision Search pipeline consists of the following key steps:
    - The `ranker.py` module retrieves the top-K matches based on similarity scores.
    - Results are re-ranked using cross-encoder/ms-marco-MiniLM-L-6-v2 model to improve relevance (e.g., using additional metadata or heuristics).
    - **Mathematical Concept:**
-     - Both images and text queries are encoded as high-dimensional vectors (embeddings) in ℝⁿ using the SigLIP model:  
-       \( \mathbf{v}_{\text{image}} \in \mathbb{R}^n \), \( \mathbf{v}_{\text{text}} \in \mathbb{R}^n \)
-     - Semantic similarity between a query and an image is computed using cosine similarity:  
-       \( \text{sim}(\mathbf{v}_{\text{text}}, \mathbf{v}_{\text{image}}) = \frac{\mathbf{v}_{\text{text}} \cdot \mathbf{v}_{\text{image}}}{\|\mathbf{v}_{\text{text}}\| \|\mathbf{v}_{\text{image}}\|} \)
-     - Alternatively, dot product similarity can be used:  
-       \( \text{sim}(\mathbf{v}_{\text{text}}, \mathbf{v}_{\text{image}}) = \mathbf{v}_{\text{text}} \cdot \mathbf{v}_{\text{image}} \)
-     - For top-K retrieval, all image vectors are ranked by their similarity scores to the query vector, and the K highest-scoring images are returned:  
-       \( \text{Top-K} = \text{argsort}_K\left(\text{sim}(\mathbf{v}_{\text{text}}, \mathbf{v}_{\text{image}_i})\right) \)
+     - Both images and text queries are encoded as high-dimensional vectors (embeddings) in R^n using the SigLIP model:
+       - `v_image ∈ R^n`, `v_text ∈ R^n`
+     - Semantic similarity between a query and an image is computed using cosine similarity:
+       - `sim(v_text, v_image) = (v_text · v_image) / (||v_text|| * ||v_image||)`
+     - Alternatively, dot product similarity can be used:
+       - `sim(v_text, v_image) = v_text · v_image`
+     - For top-K retrieval, all image vectors are ranked by their similarity scores to the query vector, and the K highest-scoring images are returned:
+       - `Top-K = argsort_K(sim(v_text, v_image_j))`
 
 5. **Frontend Visualization**
    - The Streamlit app provides an interactive interface for users to enter queries and view results.
