@@ -95,8 +95,8 @@ The Zero-Shot Vision Search pipeline consists of the following key steps:
 
 ## Results
 
-The following image demonstrates the effectiveness of the Zero-Shot Vision Search engine in retrieving semantically relevant images for a given text query:
+The following image demonstrates the effectiveness of the Zero-Shot Vision Search engine that this project was able to achieve in retrieving semantically relevant images for a given text query:
 
 ![Zero-Shot Vision Search Result](assets/zero-shot-vision-search-result.png)
 
-*Figure: Example of top-K image retrieval results for a natural language query using the SigLIP-powered search engine.*
+*Figure: Result of top-K image retrieval results for a natural language query using the SigLIP-powered search engine.*
